@@ -1,0 +1,42 @@
+1. 
+
+grep -R -wns 'foo\|welcome' <DIR_PATH> -C  2 
+
+desc: -C 2 - Print 2 line before and after matching pattern
+
+2. 
+
+command: lscpu
+check CPU(s) value from output 
+
+3. 
+3.1: mkdir  micro-service
+     cd mkdir  micro-service
+     git init
+
+3.2: mkdir module1
+     touch module1/.gitkeep
+     git add module1/.gitkeep
+     git commit -m "adding empty dir"
+
+ 3.3: mkdir libs
+      git submodule add https://github.com/kubernetes/kubernetes libs/k8s
+      git submodule add git@github.com:Netflix/chaosmonkey.git libs/tests
+      git commit -m "adding submodule"
+
+ 3.4: vi .gitigonre 
+      add *.swp in file and save
+
+ 4.
+
+ Find zombie process  PID
+ ps aux | awk '"[Zz]" ~ $8 { printf("%s, PID = %d\n", $8, $2); }'
+ ps axo stat,ppid,pid,comm | grep -w defunct
+
+ 
+
+
+
+
+
+
